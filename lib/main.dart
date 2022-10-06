@@ -18,16 +18,21 @@ import 'firebase_options.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Only allowing the potrait orientation
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
+  
+  // Initialise firebase for later use
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
   bool loggedIn = false;
-
+   
+  // Listen for sigin-in state.
   FirebaseAuth.instance.authStateChanges().listen((User? user) {
     if (user == null) {
       // print('User is currently signed out!');
@@ -90,6 +95,8 @@ class MainPage extends StatelessWidget {
                 iconTheme: const IconThemeData(color: Colors.white),
                 textTheme: const TextTheme().apply(bodyColor: Colors.black),
               ),
+              
+              // Menu button for options 'Profile', 'Help' and 'Sign Out'
               child: PopupMenuButton<int>(
                 color: Color.fromARGB(255, 97, 178, 224),
                 onSelected: (item) => onSelected(context, item),
@@ -154,6 +161,7 @@ class MainPage extends StatelessWidget {
               radius: 95,
               backgroundImage: AssetImage('assets/logo.png'),
             ),
+            // Booling button
             Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
               const Padding(padding: EdgeInsets.fromLTRB(0, 35, 0, 15)),
               Container(
@@ -171,6 +179,7 @@ class MainPage extends StatelessWidget {
                   child: const Text("BOOKING", style: TextStyle(fontSize: 15)),
                 ),
               ),
+              // Tickets button
               Container(
                 margin: const EdgeInsets.all(10),
                 height: 75.0,
@@ -191,6 +200,7 @@ class MainPage extends StatelessWidget {
               ),
             ]),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+              // Get Help button
               Container(
                 margin: const EdgeInsets.all(10),
                 height: 75.0,
@@ -230,7 +240,8 @@ class MainPage extends StatelessWidget {
           ]),
         ),
       );
-
+  
+  // Callback function for the PopupMenu button
   void onSelected(BuildContext context, int item) async {
     switch (item) {
       case 0:
