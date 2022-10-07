@@ -40,7 +40,7 @@ class _TicketPageState extends State<TicketPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tickes'),
+        title: const Text('Tickets'),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 25, 78, 109),
       ),
