@@ -19,14 +19,17 @@ class _TicketScreenState extends State<TicketScreen> {
         backgroundColor: Color.fromARGB(255, 25, 78, 109),
       ),
       body: ValueListenableBuilder(
+        // listen to changes to this data location
         valueListenable: Hive.box<Tickets>('ticketBox').listenable(),
         builder: (context, Box<Tickets> box, _) {
           if (box.values.isEmpty)
             return Center(
               child: Text("No tickets"),
             );
+          // Generate a list for the different tickets
           return ListView.builder(
             itemCount: box.values.length,
+            // Definition for an individual item in the list
             itemBuilder: (context, index) {
               Tickets? currentTicket = box.getAt(index);
               return Card(
