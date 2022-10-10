@@ -38,7 +38,7 @@ class _BookingPageState extends State<BookingPage> {
     }
   }
 
-  void _selectDate2() async {
+  void  _selectDate2()  async  {
     final DateTime? newDate = await showDatePicker(
       context: context,
       initialDate: departDate.add(const Duration(days: 1)),
@@ -48,7 +48,7 @@ class _BookingPageState extends State<BookingPage> {
     );
     if (newDate != null) {
       setState(() {
-        arrivalDate = newDate;
+        arrivalDate  =  newDate;
       });
     }
   }
