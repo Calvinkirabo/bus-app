@@ -1,19 +1,19 @@
-import 'package:bus_application/screens/payment.dart';
-import 'package:flutter/material.dart';
-import 'package:dropdown_search/dropdown_search.dart';
-import 'package:bus_application/models/tickets.dart';
-import 'package:hive_flutter/adapters.dart';
-import 'package:syncfusion_flutter_datepicker/datepicker.dart';
-import 'package:intl/intl.dart';
-import 'dart:math';
-import 'package:provider/provider.dart';
+import 'package: bus_application/screens/payment.dart';
+import 'package: flutter/material.dart';
+import 'package: dropdown_search/dropdown_search.dart';
+import 'package: bus_application/models/tickets.dart';
+import 'package: hive_flutter/adapters.dart';
+import 'package: syncfusion_flutter_datepicker/datepicker.dart';
+import 'package: intl/intl.dart';
+import 'dart: math';
+import 'package: provider/provider.dart';
 import '../services.dart';
 import '../main.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package: firebase_core/firebase_core.dart';
 import '../firebase_options.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:uuid/uuid.dart';
+import 'package: firebase_database/firebase_database.dart';
+import 'package: firebase_auth/firebase_auth.dart';
+import 'package: uuid/uuid.dart';
 
 class BookingPage extends StatefulWidget {
   const BookingPage({Key? key}) : super(key: key);
@@ -22,33 +22,33 @@ class BookingPage extends StatefulWidget {
   _BookingPageState createState() => _BookingPageState();
 }
 
-class _BookingPageState extends State<BookingPage> {
+class _BookingPageState  extends  State<BookingPage> {
   void _selectDate() async {
-    final DateTime? newDate = await showDatePicker(
-      context: context,
-      initialDate: departDate,
-      firstDate: DateTime(2021, 1),
-      lastDate: DateTime(2050, 7),
-      helpText: 'Select a date',
+    final DateTime? newDate  =  await showDatePicker(
+      context:  context,
+      initialDate:  departDate,
+      firstDate:  DateTime(2021, 1),
+      lastDate:  DateTime(2050, 7),
+      helpText: ' Select a date ',
     );
     if (newDate != null) {
       setState(() {
-        departDate = newDate;
+        departDate  =  newDate;
       });
     }
   }
 
   void  _selectDate2()  async  {
-    final DateTime? newDate = await showDatePicker(
-      context: context,
-      initialDate: departDate.add(const Duration(days: 1)),
-      firstDate: DateTime(2021, 1),
-      lastDate: DateTime(2050, 7),
-      helpText: 'Select a date',
+    final DateTime? newDate  =  await showDatePicker(
+      context:  context,
+      initialDate:  departDate.add(const Duration(days: 1)),
+      firstDate:  DateTime(2021, 1),
+      lastDate:  DateTime(2050, 7),
+      helpText: ' Select  a  date ',
     );
     if (newDate != null) {
       setState(() {
-        arrivalDate  =  newDate;
+        arrivalDate   =   newDate;
       });
     }
   }
