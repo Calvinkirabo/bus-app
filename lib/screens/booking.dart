@@ -397,23 +397,23 @@ class DisplayCard extends StatelessWidget {
 }
 
 class SelectSeat extends StatefulWidget {
-  final coach;
-  final price;
-  final time;
-  final date;
-  final toCity;
-  final fromCity;
-  final booked;
-  const SelectSeat(
-      {Key? key,
-      required this.coach,
-      required this.price,
-      required this.time,
-      required this.date,
-      required this.toCity,
-      required this.fromCity,
-      required this.booked})
-      : super(key: key);
+   final coach;
+   final price;
+   final time;
+   final date;
+   final toCity;
+   final fromCity;
+   final booked;
+   const SelectSeat(
+       {Key? key,
+       required this.coach,
+       required this.price,
+       required this.time,
+       required this.date,
+       required this.toCity,
+       required this.fromCity,
+       required this.booked})
+       :  super(key: key);
 
   @override
   _SelectSeatState createState() => _SelectSeatState();
@@ -424,53 +424,53 @@ class _SelectSeatState extends State<SelectSeat> {
   Widget build(BuildContext context) {
     List seats = [];
 
-    int c = 2;
-    int seatno = 1;
-    for (int i = 0; i < 50; i++) {
-      if (i == c && c < 50 - 5) {
-        seats.add(Container());
-        c += 5;
-        continue;
+     int c = 2;
+     int seatno = 1;
+     for (int i = 0; i < 50; i++) {
+       if (i == c && c < 50 - 5) {
+         seats.add(Container());
+         c += 5;
+         continue;
       }
-      Random random = new Random();
-      int randomNumber = random.nextInt(7) + 1;
-      var taken = [];
-      taken = widget.booked.toString().split(",");
+       Random random = new Random();
+       int randomNumber = random.nextInt(7) + 1;
+       var taken = [];
+       taken = widget.booked.toString().split(",");
 
       seats.add(Seat(
-        seatnumber: seatno,
-        available: taken.contains(seatno.toString()) == false ? true : false,
-        coach: widget.coach,
-        price: widget.price,
-        time: widget.time,
-        date: widget.date,
-        toCity: widget.toCity,
-        fromCity: widget.fromCity,
+         seatnumber: seatno,
+         available: taken.contains(seatno.toString()) == false ? true : false,
+         coach: widget.coach,
+         price: widget.price,
+         time: widget.time,
+         date: widget.date,
+         toCity: widget.toCity,
+         fromCity: widget.fromCity,
       ));
       seatno++;
     }
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Select preffered seat(s)"),
-        centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 25, 78, 109),
+         title: const Text("Select preffered seat(s)"),
+         centerTitle: true,
+         backgroundColor: Color.fromARGB(255, 25, 78, 109),
       ),
       body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        padding: const EdgeInsets.all(10),
-        child: Container(
+         height: double.infinity,
+         width: double.infinity,
+         padding: const EdgeInsets.all(10),
+         child: Container(
           decoration: BoxDecoration(
               border: Border.all(color: Colors.black, width: 2),
               color: Colors.grey[50]),
           child: GridView.count(
-            crossAxisCount: 5,
-            primary: false,
-            padding: const EdgeInsets.all(10),
-            crossAxisSpacing: 15,
-            mainAxisSpacing: 5,
-            children: [
+             crossAxisCount: 5,
+             primary: false,
+             padding: const EdgeInsets.all(10),
+             crossAxisSpacing: 15,
+             mainAxisSpacing: 5,
+             children: [
               ...seats,
             ],
           ),
@@ -481,24 +481,24 @@ class _SelectSeatState extends State<SelectSeat> {
 }
 
 class Seat extends StatefulWidget {
-  final seatnumber;
-  final bool available;
-  final coach;
-  final price;
-  final time;
-  final date;
-  final toCity;
-  final fromCity;
-  const Seat(
+   final seatnumber;
+   final bool available;
+   final coach;
+   final price;
+   final time;
+   final date;
+   final toCity;
+   final fromCity;
+   const Seat(
       {Key? key,
-      required this.seatnumber,
-      required this.available,
-      required this.coach,
-      required this.price,
-      required this.time,
-      required this.toCity,
-      required this.fromCity,
-      required this.date})
+       required this.seatnumber,
+       required this.available,
+       required this.coach,
+       required this.price,
+       required this.time,
+       required this.toCity,
+       required this.fromCity,
+       required this.date})
       : super(key: key);
 
   @override
@@ -514,15 +514,15 @@ class _SeatState extends State<Seat> {
 
     void showModal() {
       showModalBottomSheet<void>(
-        context: context,
-        builder: (BuildContext context) {
-          return Container(
-            height: 200,
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
+         context: context,
+         builder: (BuildContext context) {
+           return Container(
+             height: 200,
+             padding: const EdgeInsets.all(10),
+             child: Column(
+               crossAxisAlignment: CrossAxisAlignment.start,
+               mainAxisAlignment: MainAxisAlignment.spaceAround,
+               children: <Widget>[
                 Text(
                   'Confirm booking for ticket no ${widget.seatnumber}',
                   style: const TextStyle(
