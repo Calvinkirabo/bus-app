@@ -19,7 +19,7 @@ class _HelpAndSupportState extends State<HelpAndSupport> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("HELP"),
+        title: Text(" HELP "),
         elevation: 0,
         backgroundColor: Color.fromARGB(255, 25, 78, 109),
       ),
@@ -28,7 +28,7 @@ class _HelpAndSupportState extends State<HelpAndSupport> {
           children: [
             SizedBox(height: size.height * 0.05),
             TabLabel(
-              label: 'About ',
+              label: 'About',
               color: kappSecondary,
               align: Alignment.centerLeft,
             ),
@@ -48,7 +48,7 @@ class _HelpAndSupportState extends State<HelpAndSupport> {
                     align: Alignment.centerLeft),
                 const SizedBox(height: 10.0),
                 TabButton(
-                    label: 'Call Help line',
+                    label: ' Call Help line ',
                     color: kappPrimary,
                     icon: Icons.phone_forwarded_outlined,
                     weight: FontWeight.w400,
