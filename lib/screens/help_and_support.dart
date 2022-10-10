@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import  'package:flutter/material.dart';
+import  'package:url_launcher/url_launcher.dart';
 
-import '../wigets/constants.dart';
-import '../wigets/tab_button.dart';
-import '../wigets/tab_label.dart';
+import  '../wigets/constants.dart';
+import  '../wigets/tab_button.dart';
+import  '../wigets/tab_label.dart';
 
 class HelpAndSupport extends StatefulWidget {
   const HelpAndSupport({Key? key}) : super(key: key);
@@ -15,104 +15,104 @@ class HelpAndSupport extends StatefulWidget {
 class _HelpAndSupportState extends State<HelpAndSupport> {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final size  =  MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(" HELP "),
-        elevation: 0,
-        backgroundColor: Color.fromARGB(255, 25, 78, 109),
+      appBar:  AppBar(
+         centerTitle: true,
+         title: Text(" HELP "),
+         elevation: 0,
+         backgroundColor: Color.fromARGB(255, 25, 78, 109),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
+      body:  SingleChildScrollView(
+        child:  Column(
+          children:  [
             SizedBox(height: size.height * 0.05),
             TabLabel(
-              label: 'About',
-              color: kappSecondary,
-              align: Alignment.centerLeft,
+              label:  'About',
+              color:  kappSecondary,
+              align:  Alignment.centerLeft,
             ),
             TabButton(
-              label: 'FAQs',
-              color: kappPrimary,
-              icon: Icons.help_outline,
-              weight: FontWeight.w400,
+              label:  'FAQs',
+              color:  kappPrimary,
+              icon:  Icons.help_outline,
+              weight:  FontWeight.w400,
               page: () {},
             ),
             Column(
-              children: [
+              children:  [
                 SizedBox(height: size.height * 0.05),
                 TabLabel(
-                    label: 'Contact Us',
-                    color: kappSecondary,
-                    align: Alignment.centerLeft),
+                     label:  'Contact Us',
+                     color:  kappSecondary,
+                     align:  Alignment.centerLeft),
                 const SizedBox(height: 10.0),
                 TabButton(
-                    label: ' Call Help line ',
-                    color: kappPrimary,
-                    icon: Icons.phone_forwarded_outlined,
-                    weight: FontWeight.w400,
-                    page: () => {showLoading("Select ")}),
+                     label:  ' Call Help line ',
+                     color:  kappPrimary,
+                     icon:  Icons.phone_forwarded_outlined,
+                     weight:  FontWeight.w400,
+                     page: ()  =>  {showLoading("Select ")}),
                 const Divider(
-                    indent: 20.0,
-                    endIndent: 25.0,
-                    color: kappPrimary,
-                    height: 1.0),
+                     indent:  20.0,
+                     endIndent:  25.0,
+                     color:  kappPrimary,
+                     height:  1.0),
                 TabButton(
-                    label: 'Report a problem',
-                    color: kappPrimary,
-                    icon: Icons.email_outlined,
-                    weight: FontWeight.w400,
-                    page: () {
+                     label:  'Report a problem',
+                     color:  kappPrimary,
+                     icon:  Icons.email_outlined,
+                     weight:  FontWeight.w400,
+                     page: () {
                       final mailtoUri = Uri(
-                          scheme: 'mailto',
-                          path: 'baisirajab13268@gmail@gmail.com',
-                          queryParameters: {'Report a problem': 'Example'});
+                           scheme: 'mailto',
+                           path: 'baisirajab13268@gmail@gmail.com',
+                           queryParameters: {'Report a problem': 'Example'});
                       print(
-                          mailtoUri); // mailto:John.Doe@example.com?subject=Example
+                           mailtoUri); // mailto:John.Doe@example.com?subject=Example
 
                       launchUrl(mailtoUri);
                     }),
                 const Divider(
-                  indent: 20.0,
-                  endIndent: 25.0,
-                  color: kappPrimary,
-                  height: 1.0,
+                   indent:  20.0,
+                   endIndent:  25.0,
+                   color:  kappPrimary,
+                   height:  1.0,
                 ),
                 TabButton(
-                    label: 'Send Feedback',
-                    color: kappPrimary,
-                    icon: Icons.feedback_outlined,
-                    weight: FontWeight.w400,
-                    page: () {
+                     label:   'Send Feedback',
+                     color:   kappPrimary,
+                     icon: Icons.feedback_outlined,
+                     weight: FontWeight.w400,
+                     page: () {
                       final mailtoUri = Uri(
-                          scheme: 'mailto',
-                          path: 'feedback@gmail.com',
-                          queryParameters: {'Feedback': 'Example'});
+                           scheme:  'mailto',
+                           path:  'feedback@gmail.com',
+                           queryParameters:  {'Feedback': 'Example'});
                       print(
-                          mailtoUri); // mailto:John.Doe@example.com?subject=Example
+                           mailtoUri); // mailto:John.Doe@example.com?subject=Example
 
                       launchUrl(mailtoUri);
                     }),
                 const Divider(
-                  indent: 20.0,
-                  endIndent: 25.0,
-                  color: kappPrimary,
-                  height: 1.0,
+                   indent:  20.0,
+                   endIndent:  25.0,
+                   color:  kappPrimary,
+                   height:  1.0,
                 ),
               ],
             ),
             SizedBox(height: size.height * 0.05),
             TabLabel(
-              label: 'App Info',
-              color: kappSecondary,
-              align: Alignment.centerLeft,
+               label:  'App Info',
+               color:  kappSecondary,
+               align:  Alignment.centerLeft,
             ),
             const SizedBox(height: 10.0),
             const TabButton(
-              label: 'App Version',
-              color: kappPrimary,
-              weight: FontWeight.w400,
+               label: 'App Version',
+               color: kappPrimary,
+               weight: FontWeight.w400,
             ),
           ],
         ),
@@ -127,52 +127,52 @@ class _HelpAndSupportState extends State<HelpAndSupport> {
       builder: (BuildContext context) {
         return AlertDialog(
           content: Container(
-            margin: const EdgeInsets.fromLTRB(30, 20, 30, 20),
-            width: double.infinity,
-            height: 200,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Text(message),
-                  TabButton(
-                      label: 'RAJAB',
-                      color: kappPrimary,
-                      icon: Icons.phone_forwarded_outlined,
-                      weight: FontWeight.w400,
-                      page: () {
-                        makePhoneCall("+256701885310");
+             margin: const EdgeInsets.fromLTRB(30, 20, 30, 20),
+             width: double.infinity,
+             height: 200,
+             child: SingleChildScrollView(
+               child: Column(
+                 children: [
+                   Text(message),
+                   TabButton(
+                       label: 'RAJAB',
+                       color: kappPrimary,
+                       icon: Icons.phone_forwarded_outlined,
+                       weight: FontWeight.w400,
+                       page: () {
+                         makePhoneCall("+256701885310");
                       }),
                   TabButton(
-                      label: 'SANDRA',
-                      color: kappPrimary,
-                      icon: Icons.phone_forwarded_outlined,
-                      weight: FontWeight.w400,
-                      page: () {
-                        makePhoneCall("+256705012070");
+                       label: 'SANDRA',
+                       color: kappPrimary,
+                       icon: Icons.phone_forwarded_outlined,
+                       weight: FontWeight.w400,
+                       page: () {
+                         makePhoneCall("+256705012070");
+                      }) ,
+                  TabButton(
+                       label: 'CALVIN',
+                       color: kappPrimary,
+                       icon: Icons.phone_forwarded_outlined,
+                       weight: FontWeight.w400,
+                       page: () {
+                         makePhoneCall("+256708550858");
                       }),
                   TabButton(
-                      label: 'CALVIN',
-                      color: kappPrimary,
-                      icon: Icons.phone_forwarded_outlined,
-                      weight: FontWeight.w400,
-                      page: () {
-                        makePhoneCall("+256708550858");
+                       label: 'FREEDOM',
+                       color: kappPrimary,
+                       icon: Icons.phone_forwarded_outlined,
+                       weight: FontWeight.w400,
+                       page: () {
+                         makePhoneCall("+256783580962");
                       }),
                   TabButton(
-                      label: 'FREEDOM',
-                      color: kappPrimary,
-                      icon: Icons.phone_forwarded_outlined,
-                      weight: FontWeight.w400,
+                       label: 'LOVE',
+                       color: kappPrimary,
+                       icon: Icons.phone_forwarded_outlined,
+                       weight: FontWeight.w400,
                       page: () {
-                        makePhoneCall("+256783580962");
-                      }),
-                  TabButton(
-                      label: 'LOVE',
-                      color: kappPrimary,
-                      icon: Icons.phone_forwarded_outlined,
-                      weight: FontWeight.w400,
-                      page: () {
-                        makePhoneCall("+256783111182");
+                         makePhoneCall("+256783111182");
                       }),
                 ],
               ),
@@ -184,7 +184,7 @@ class _HelpAndSupportState extends State<HelpAndSupport> {
   }
 
   Future<void> makePhoneCall(String phoneNumber) async {
-    final Uri launchUri = Uri(
+    final Uri launchUri  =  Uri(
       scheme: 'tel',
       path: phoneNumber,
     );
