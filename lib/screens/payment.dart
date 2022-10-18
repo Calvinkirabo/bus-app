@@ -1,6 +1,6 @@
-import 'package:bus_application/main.dart';
-import 'package:flutter/material.dart';
-import 'package:flutterwave/flutterwave.dart';
+import  'package:bus_application/main.dart';
+import  'package:flutter/material.dart';
+import  'package:flutterwave/flutterwave.dart';
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({Key? key}) : super(key: key);
@@ -10,26 +10,26 @@ class PaymentScreen extends StatefulWidget {
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
-  final amountController = TextEditingController();
-  final currencyController = TextEditingController();
-  final phoneController = TextEditingController();
-  final emailController = TextEditingController();
-  String selectedCurrency = "";
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Payment'),
-        centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 25, 78, 109),
+   final amountController = TextEditingController();
+   final currencyController = TextEditingController();
+   final phoneController = TextEditingController();
+   final emailController = TextEditingController();
+   String selectedCurrency = "";
+   @override
+   Widget build(BuildContext context) {
+     return Scaffold(
+       appBar: AppBar(
+         title: const Text('Payment'),
+         centerTitle: true,
+         backgroundColor: Color.fromARGB(255, 25, 78, 109),
       ),
-      body: ListView(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(15),
-            child: const Text(
-              "AMOUNT TO PAID",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+       body: ListView(
+         children: [
+           Container(
+             padding: const EdgeInsets.all(15),
+             child: const Text(
+               "AMOUNT TO BE PAID",
+               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             ),
           ),
           Container(

@@ -1,12 +1,12 @@
-//import 'dart:io';
-import 'package:provider/provider.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import '../firebase_options.dart';
-import "../services.dart";
-import "../main.dart";
+ //import 'dart:io';
+ import 'package:provider/provider.dart';
+ import 'package:flutter/material.dart';
+ import 'package:flutter/cupertino.dart';
+ import 'package:firebase_core/firebase_core.dart';
+ import 'package:firebase_auth/firebase_auth.dart';
+ import '../firebase_options.dart';
+ import "../services.dart";
+ import "../main.dart";
 
 void main() => runApp(const Login());
 
@@ -19,13 +19,13 @@ class Login extends StatelessWidget {
     final ThemeData theme = ThemeData();
     final PageController controller = PageController(initialPage: 0);
 
-    return MaterialApp(
-      theme: theme.copyWith(
-        colorScheme: theme.colorScheme.copyWith(
-          primary: Color.fromARGB(255, 25, 78, 109),
-          //  secondary: Colors.brown,
-        ),
-      ),
+     return MaterialApp(
+       theme: theme.copyWith(
+         colorScheme: theme.colorScheme.copyWith(
+           primary: Color.fromARGB(255, 25, 78, 109),
+           //  secondary: Colors.brown,
+         ),
+       ),
       title: _title,
       home: Scaffold(
         appBar: AppBar(
